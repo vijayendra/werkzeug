@@ -58,7 +58,7 @@ def stream_encode_multipart(values, use_tempfile=True, threshold=1024 * 500,
                 if length + _closure[1] <= threshold:
                     stream.write(string)
                 else:
-                    new_stream = TemporaryFile('wb+')
+                    new_stream = TemporaryFile()
                     new_stream.write(stream.getvalue())
                     new_stream.write(string)
                     _closure[0] = new_stream

@@ -39,7 +39,7 @@ def default_stream_factory(total_content_length, filename, content_type,
                            content_length=None):
     """The stream factory that is used per default."""
     if total_content_length > 1024 * 500:
-        return TemporaryFile('wb+')
+        return TemporaryFile()
     return BytesIO()
 
 
